@@ -1,4 +1,4 @@
-Repository for the Chatbot Accessibility Playbook. (c) 2021 [The MITRE Corporation](www.mitre.org). All rights reserved. Access the playbook [here](https://mitre.github.io/chatbot-accessibility-playbook-public/index.html).
+Repository for the Chatbot Accessibility Playbook. (c) 2021 [The MITRE Corporation](www.mitre.org). All rights reserved. Access the playbook at [this link](https://mitre.github.io/chatbot-accessibility-playbook/index.html).
 
 Approved for public release. Distribution unlimited. Case numbers 21-3801 and 21-3922. Funded by the MITRE Innovation Program.
 
