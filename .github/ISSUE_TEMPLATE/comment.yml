@@ -1,0 +1,33 @@
+name: Comment on Chatbot Accessibility Playbook
+description: Share a comment or suggestion on the Chatbot Accessibility Playbook
+title: "Comment"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to review and comment on this playbook.
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: What play, recommendation, or section of the playbook are you reporting on? (This is automatically populated if you followed a link on a playbook page. Leave blank if making a general comment.)
+      placeholder: ex. 4.2.1
+    validations:
+      required: false
+  - type: textarea
+    id: comment
+    attributes:
+      label: Comment
+      description: Share your comment or suggestion here.
+      placeholder: ex. Thanks for making this playbook!
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info? (Not required.)
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+ 

@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            // If this is a recommendation page, restore the previous navigation scroll position.
+            let re_pathtest = /4_\d_\d\d?/;
+            path = window.location.pathname.split("/")
+            if (re_pathtest.test(path[path.length-1])) {
+                mainnav = document.querySelector(".js-main-nav");
+                var scrollpos = localStorage.getItem('navscrollpos');
+                if (scrollpos) mainnav.scrollTo(0, scrollpos);
+            }
+        });
+
+        window.onbeforeunload = function(e) {
+            // Save the navigation scroll position.
+            mainnav = document.querySelector(".js-main-nav");
+            localStorage.setItem('navscrollpos', mainnav.scrollTop);
+        };
+    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <title>4.2.15 List commands - Chatbot Accessibility Playbook</title>
+  <link rel="stylesheet" href="../assets/css/just-the-docs.css">
+  
+  <script type="text/javascript" src="../assets/js/vendor/lunr.min.js"></script>
+  
+  <script type="text/javascript" src="../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body><div id="skip"><a href="#maincontent">Skip to Main Content</a></div>
+
+
+
+  <div class="page-wrap">
+    <div class="side-bar">
+      <a href="../" class="site-title fs-6 lh-tight">Chatbot Accessibility Playbook</a>
+      <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+      <div class="navigation main-nav js-main-nav">
+        <nav>
+  <ul class="navigation-list">
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../" id="title-link" class="navigation-list-link">Table of Contents</a></li>
+
+<li class="navigation-list-item">        
+    <a href="../front_matter.pdf#nameddest=Introduction" class="navigation-list-link">1 Introduction (pdf)</a></li>
+
+<li class="navigation-list-item">        
+    <a href="../front_matter.pdf#nameddest=Background" class="navigation-list-link">2 Background (pdf)</a></li>
+
+<li class="navigation-list-item">        
+    <a href="../front_matter.pdf#nameddest=How" class="navigation-list-link">3 How to Use this Playbook (pdf)</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/4.html" class="navigation-list-link">4 Plays</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/4_1.html" class="navigation-list-link">4.1 Selecting a Chatbot Platform</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_1_1.html" class="navigation-list-link">4.1.1 Recognize Platform Needs</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_1_2.html" class="navigation-list-link">4.1.2 Check Accessibility Claims</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_1_3.html" class="navigation-list-link">4.1.3 Choose an Accessible Platform</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item active">
+            
+            <a href="../docs/4_2.html" class="navigation-list-link">4.2 Designing Chatbot Content</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_1.html" class="navigation-list-link">4.2.1 Identify the chatbot</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_2.html" class="navigation-list-link">4.2.2 State chatbot purpose</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_3.html" class="navigation-list-link">4.2.3 Use Emotional Intelligence</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_4.html" class="navigation-list-link">4.2.4 Keep messages short</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_5.html" class="navigation-list-link">4.2.5 Use Simple Messages</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_6.html" class="navigation-list-link">4.2.6 Limit the number of messages</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_7.html" class="navigation-list-link">4.2.7 Build Simple Conversations</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_8.html" class="navigation-list-link">4.2.8 Clarify Complex Topics</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_9.html" class="navigation-list-link">4.2.9 Support context-aware conversations</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_10.html" class="navigation-list-link">4.2.10 Supplement Icons With Text</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_11.html" class="navigation-list-link">4.2.11 Media Accessibility</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_12.html" class="navigation-list-link">4.2.12 Supplement text with icons</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_13.html" class="navigation-list-link">4.2.13 Highlight important info</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_14.html" class="navigation-list-link">4.2.14 Limit Choices</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item  active">
+                      
+                      <a href="../docs/4_2_15.html" class="navigation-list-link active">4.2.15 List commands</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_16.html" class="navigation-list-link">4.2.16 Set Expectations</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_17.html" class="navigation-list-link">4.2.17 Communicate Privacy policies</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_18.html" class="navigation-list-link">4.2.18 Recognize Errors</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_19.html" class="navigation-list-link">4.2.19 Reduce Panic Triggers</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_20.html" class="navigation-list-link">4.2.20 Remove Flashing content</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_21.html" class="navigation-list-link">4.2.21 Include people with disabilities</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_2_22.html" class="navigation-list-link">4.2.22 Follow WCAG</a>
+                      
+                    </li>
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/4_3.html" class="navigation-list-link">4.3 Designing Chatbot Interface</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_1.html" class="navigation-list-link">4.3.1 Offer Multi-modal interaction</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_2.html" class="navigation-list-link">4.3.2 Support STT and TTS</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_3.html" class="navigation-list-link">4.3.3 Support keyboard navigation</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_4.html" class="navigation-list-link">4.3.4 Support screen readers</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_5.html" class="navigation-list-link">4.3.5 Support zoom</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_6.html" class="navigation-list-link">4.3.6 Offer Color contrast</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_7.html" class="navigation-list-link">4.3.7 Use Legible Fonts</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_8.html" class="navigation-list-link">4.3.8 Consider Font Size</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_9.html" class="navigation-list-link">4.3.9 Highlight Visual Focus</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_10.html" class="navigation-list-link">4.3.10 Consider Chatbot Size</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_11.html" class="navigation-list-link">4.3.11 Minimize Distraction</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_12.html" class="navigation-list-link">4.3.12 Distinguish Senders</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_13.html" class="navigation-list-link">4.3.13 Label Buttons</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_14.html" class="navigation-list-link">4.3.14 Accept varied language</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_15.html" class="navigation-list-link">4.3.15 Allow user customization</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_16.html" class="navigation-list-link">4.3.16 Manage pacing</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_17.html" class="navigation-list-link">4.3.17 Include people with disabilities</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_3_18.html" class="navigation-list-link">4.3.18 Follow WCAG</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/4_4.html" class="navigation-list-link">4.4 Designing Chatbot Integration</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_1.html" class="navigation-list-link">4.4.1 Support navigation to the chatbot</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_2.html" class="navigation-list-link">4.4.2 Make user aware of the chatbot</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_3.html" class="navigation-list-link">4.4.3 Offer Accessible Activation</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_4.html" class="navigation-list-link">4.4.4 Use Responsive Design</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_5.html" class="navigation-list-link">4.4.5 Consider accessibility in transitions</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_6.html" class="navigation-list-link">4.4.6 Time out gracefully</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_7.html" class="navigation-list-link">4.4.7 Link to accessible content</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_8.html" class="navigation-list-link">4.4.8 Notify for new messages</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_9.html" class="navigation-list-link">4.4.9 Use appropriate notifications</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_10.html" class="navigation-list-link">4.4.10 Maintain Website Accessibility</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_11.html" class="navigation-list-link">4.4.11 Include people with disabilities</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_4_12.html" class="navigation-list-link">4.4.12 Follow WCAG</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/4_5.html" class="navigation-list-link">4.5 Testing the Chatbot</a>
+            
+              
+              <ul class="navigation-list-child-list ">
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_5_1.html" class="navigation-list-link">4.5.1 Start early</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_5_2.html" class="navigation-list-link">4.5.2 Test frequently</a>
+                      
+                    </li>
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_5_3.html" class="navigation-list-link">4.5.3 Test with devices</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_5_4.html" class="navigation-list-link">4.5.4 Measure satisfaction</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li class="navigation-list-item ">
+                      
+                      <a href="../docs/4_5_5.html" class="navigation-list-link">4.5.5 Include diverse users</a>
+                      
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/references.html" class="navigation-list-link">References</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/A_1.html" class="navigation-list-link">A.1 User Research Checklist</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/A_2.html" class="navigation-list-link">A.2 Self Assessment Checklist</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <li class="navigation-list-item">
+            
+            <a href="../docs/A_3.html" class="navigation-list-link">A.3 User Questionnaire Items</a>
+            
+          </li>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+  </ul>
+</nav>
+
+      </div>
+      
+    </div>
+    <div class="main-content-wrap">
+      <div class="main-content">
+<header><h1><a href="../index.html">Chatbot Accessibility Playbook</a></h1></header>
+        
+          
+            <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+              <ol class="breadcrumb-nav-list">
+<li class="breadcrumb-nav-list-item"><a href="../docs/4.html">4 Plays</a></li>
+                
+                  <li class="breadcrumb-nav-list-item"><a href="../docs/4_2.html">4.2 Designing Chatbot Content</a></li>
+                
+                <li class="breadcrumb-nav-list-item"><span>4.2.15 List commands</span></li>
+              </ol>
+            </nav>
+          
+        
+        <nav aria-label="Previous and Next Page Links"><a class="btn btn-outline prev-next-buttons" href="4_2_14.html">Previous Page</a><a class="btn btn-outline prev-next-buttons" href="4_2_16.html">Next Page</a></nav>
+
+<main id="maincontent" class="page-content">
+          <h2><dfn>Recommendation 4.2.15:</dfn><br />Let the user know what commands they can use and when they can use them</h2>
+
+<h3 id="benefits-users">Benefits Users</h3>
+<p><img src="../icons/cognitive.svg" alt="Icon for Cognitive" class="icon" /><strong>Cognitive</strong></p>
+<h3 id="relevant-w3c-guidance"><img src="../icons/wcag-certified.svg" alt="Icon for Standard" class="icon" />Relevant W3C Guidance</h3>
+<ul><li><a href="https://www.w3.org/TR/coga-usable/#identify-controls-and-their-use-pattern" target="_blank">COGA 4.2.5 Identify Controls and Their Use</a></li></ul>
+<hr />
+<h3 id="phase-1-gather--organize">Phase 1: Gather &amp; Organize</h3>
+<p><img src="../icons/userreasearch.svg" alt="Icon for User Research" class="icon" /><strong>User Research</strong></p>
+<ul>
+  <li>Learn about the essential workflows that users want to follow and design the list of commands to support that.  Ask members of the target user group to sort chatbot capabilities into “critical”, “useful”, and “other”. Do the commands use language the users understand?</li>
+</ul>
+
+<p><br /></p>
+<h3 id="phase-2-design--implement">Phase 2: Design &amp; Implement</h3>
+<p><img src="../icons/designconsid.svg" alt="Icon for Design Question" class="icon" /><strong>Design Question</strong></p>
+<ul>
+  <li>
+    <p>Will your chatbot support free text inputs?</p>
+
+    <ul>
+      <li>Free text allows more natural conversational styles and lets the user approach the task in an intuitive way. If you offer a free text input, you will need to let the user know what they can ask the chatbot. If you don’t offer a free text input, disable the text input box so users know they have to select one of the offered choices to each question.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="../icons/tip.svg" alt="Icon for Tip" class="icon" /><strong>Tip</strong></p>
+<ul>
+  <li>If the list of acceptable commands changes throughout the conversation, make sure your supporting documentation (or the “help” option) updates accordingly.</li>
+</ul>
+
+<p><img src="../icons/example.svg" alt="Icon for Examples" class="icon" /><strong>Examples</strong></p>
+<ul>
+  <li>
+    <p>List 2-4 high-level commands with a list of related sub-tasks underneath: “File a claim (create a new small business or individual claim), View an existing claim (edit, close, or check the status of the claim), or Learn about claims (learn about types of claims supported by this office, determine your eligibility, and read about reimbursement methods)”</p>
+  </li>
+  <li>
+    <p>Propose 2-3 of the most common tasks and offer more if the user needs them: “You can file a claim or look up an existing claim. For a complete list of activities I can do for you, select ‘Chatbot Help’”.</p>
+  </li>
+  <li>
+    <p>Offer an (accessible) page with a full list of commands</p>
+  </li>
+  <li>
+    <p>Offer an option to “see all available commands”.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+<h3 id="phase-3-test--evaluate">Phase 3: Test &amp; Evaluate</h3>
+<p><img src="../icons/askyoself.svg" alt="Icon for Self Check" class="icon" /><strong>Self Check</strong></p>
+<ul>
+  <li>
+    <p>The user has access to a list of valid commands or requests</p>
+  </li>
+  <li>
+    <p>The chatbot suggests valid queries/commands if the input is active but empty for a while.</p>
+  </li>
+  <li>
+    <p>Chatbots capable of voice interaction (accessibly) describe how to activate that feature</p>
+  </li>
+</ul>
+
+<p><img src="../icons/askuser.svg" alt="Icon for Ask the User" class="icon" /><strong>Ask the User</strong></p>
+<ul>
+  <li>
+    <p>Did you know how to start the task you wanted to accomplish?</p>
+
+    <ul>
+      <li>This question is <strong>subjective</strong>; use a Likert scale. This question should be asked <strong>post-study</strong>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Does the chatbot offer helpful conversation suggestions when you don’t know what to say?</p>
+
+    <ul>
+      <li>This question is <strong>subjective</strong>; use a Likert scale. This question should be asked <strong>post-study</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+<h3 id="references">References</h3>
+<p><a href="./references.html#ref-16">16</a>, <a href="./references.html#ref-19">19</a>, <a href="./references.html#ref-23">23</a>, <a href="./references.html#ref-28">28</a></p>
+
+
+          
+        </main>
+      <br/><hr/>
+                <footer role="contentinfo" id="copyright">Copyright (c) 2021 The MITRE Corporation. All rights reserved. Approved for public release; distribution unlimited. Public release case number 21-3922.<br/><br/>
+                Share comments and suggestions on <a href="https://github.com/mitre/chatbot-accessibility-playbook/issues/new?template=comment.yml&section=4.2.15#Title" target="_blank">GitHub</a> or email Jeff Stanley at <a href="mailto:jstanley@mitre.org">jstanley@mitre.org</a>.
+                </footer>
+
+                </div>
+    </div>
+  </div>
+</body>
+</html>
