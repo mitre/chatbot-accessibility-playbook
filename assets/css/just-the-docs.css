@@ -5923,14 +5923,16 @@ th {
 }
 
 .icon {
-  width:3em;
-  max-height:2em;
-  padding-right:1em;
+  max-width:4rem;
+  max-height:2rem;
+  padding-right:1rem;
 }
 
 .role-icon {
-  max-height:2em;
-  margin-left:.5em;
-  margin-right:.2em;
+  display:inline-block;
+  max-width:2rem;
+  max-height:2rem;
+  margin-left:.5rem;
+  margin-right:.2rem;
   vertical-align: middle;
 }
